@@ -1,6 +1,6 @@
 class Pokemon {
-    #health
-    #level
+    #health;
+    #level;
     constructor(name, type, health, level) {
         this.name = name;
         this.type = type;
@@ -11,18 +11,21 @@ class Pokemon {
     }
     static allPokemon = []; //Static Property
 } //Getter Methods
-get #level() {
-    return
+const obj = {
+    get level() {
+        return this.#level = 1;
+    }
 }
-
-get #health() {
-    return
+    get health() {
+    return this.#health = 100;
 }
+console.log(obj.#level)
+console.log(obj.#health)
 
 levelUp() {
     #level++;
     #health + 10;
-    return `"${this.name} leveled up to level ${this.level}!".`
+    return `"${this.name} leveled up to level ${this.level}!".`;
 }
 isFainted() {
     if (health <= 0)
@@ -31,8 +34,8 @@ isFainted() {
     return false;
 }
 attack(targetPokemon) {
-    Pokemon.#health.reduce = Pokemon.#level * 10
-    return `"${this.name} attacked ${target.name}!"`
+    Pokemon.#health.reduce = Pokemon.#level * 10;
+    return `"${this.name} attacked ${target.name}!"`;
 }
 
 // Static Methods
@@ -41,8 +44,8 @@ getTotalPokemon() {
 }
 
 findByName(name) {
-    #allPokemon[];
-    return Pokemon
+    #allPokemon = [];
+    return Pokemon;
 }
 // TEST YOUR CODE HERE
 const charizard = new Pokemon("Charizard", "Fire");

@@ -14,7 +14,7 @@ makeCall(number) {
 }
 charge() {
     batteryLevel = 100
-    return "Phone fully charged"
+    return "Phone fully charged";
 }
 
 unlock(password) {
@@ -31,12 +31,12 @@ class iPhone extends Phone {
         this.number = number;
         this.#brand = "Apple";
         this.numberOfCameras = numberOfCameras;
-
     }
-}
-faceTime(name) {
-    batteryLevel - 10;
-    return `"Facetiming ${this.name}"`
+
+    faceTime(name) {
+        batteryLevel - 10;
+        return `"Facetiming ${this.name}"`
+    }
 }
 makeCall(number) {
     return `"Calling ${this.number} using FaceTime audio"`
@@ -48,15 +48,15 @@ console.log(flipPhone); // Phone { brand: "Nokia", model: "Flip", batteryLevel: 
 
 // 1. Making a call and checking battery
 console.log(flipPhone.makeCall("123-456-7890")); // Calling 123-456-7890
-console.log(flipPhone.battery); // 95
+console.log(flipPhone.batteryLevel); // 95
 
 // 2. Charging and checking battery
-console.log(flipPhone.charge("123-456-7890")); // Phone fully charged
-console.log(flipPhone.battery); // 100
+console.log(flipPhone.charge()); // Phone fully charged
+console.log(flipPhone.batteryLevel); // 100
 
 // 3. Unlocking the phone
-console.log(flipPhone.unlock("TimeToLearn882")); // Phone unlocked
-console.log(flipPhone.unlock("TimeToLearn882")); // Invalid Password
+console.log(flipPhone.unlock("TimeToLearn882")); // true
+console.log(flipPhone.unlock("TimeToLearn883")); // false
 //////////////////////////////////////
 
 const smartPhone = new iPhone("iPhone 14 Pro", "TimeToLearn882", 3);
@@ -78,5 +78,6 @@ console.log(smartPhone.batteryLevel); // Should be 100
 // 4. Unlock the phone
 console.log(smartPhone.unlock("0000")); // Invalid password
 console.log(smartPhone.unlock("TimeToLearn882")); // true
+
 // DO NOT REMOVE
 module.exports = { Phone, iPhone };
